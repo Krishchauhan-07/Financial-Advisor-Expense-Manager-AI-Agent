@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - AI Financial Advisor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Nexus App</span>
+            </div>
+            
+            <button class="new-chat-btn">
+                <i class="fa-solid fa-plus"></i> New Analysis
+            </button>
+
+            <div class="nav-section">
+                <h3>Recents</h3>
+                <ul class="nav-links">
+                    <li><i class="fa-solid fa-message"></i> Q1 Portfolio Review</li>
+                    <li><i class="fa-solid fa-message"></i> Tax Optimization 2026</li>
+                    <li><i class="fa-solid fa-message"></i> Crypto Diversification</li>
+                </ul>
+            </div>
+
+            <div class="settings-section">
+                <button id="apiKeyBtn" class="nav-item">
+                    <i class="fa-solid fa-key"></i> Connect APIs
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="model-selector">
+                    <span>Nexus-Financial-Pro</span> <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff" alt="User">
+                </div>
+            </header>
+
+            <div class="chat-container">
+                <div class="chat-intro">
+                    <h1>Your Personal Finance Guru</h1>
+                    <p>Upload a screenshot, PDF, or link to get expert insights on your portfolio, expenses, or investment strategy.</p>
+                </div>
+
+                <div class="chat-messages" id="chatArea">
+                    <!-- Messages go here -->
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <button class="attach-btn" id="attachBtn" title="Attach Document (PDF, Image, Link)">
+                        <i class="fa-solid fa-paperclip"></i>
+                    </button>
+                    <textarea id="userInput" placeholder="Ask for financial advice, or share a document..."></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <div class="attachment-menu hidden" id="attachmentMenu">
+                    <div class="attach-option">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span>Upload PDF</span>
+                    </div>
+                    <div class="attach-option">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Upload Screenshot</span>
+                    </div>
+                    <div class="attach-option">
+                        <i class="fa-solid fa-link"></i>
+                        <span>Paste Link</span>
+                    </div>
+                </div>
+                <div class="disclaimer">Nexus may produce inaccurate information about real-time market data. Verify critical financial decisions.</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- API Modal -->
+    <div class="modal hidden" id="apiModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connect API Keys</h2>
+                <button id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Provide your keys to enable integrations for real-time portfolio tracking and LLM access.</p>
+                <div class="form-group">
+                    <label>OpenAI API Key</label>
+                    <input type="password" placeholder="sk-...">
+                </div>
+                <div class="form-group">
+                    <label>Plaid API Key (Banking)</label>
+                    <input type="password" placeholder="production_...">
+                </div>
+                <button class="save-btn" id="saveApiBtn">Save Configurations</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
